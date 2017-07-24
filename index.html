@@ -155,6 +155,101 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="pc-pc client安装:卸载" class="article article-type-pc  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/22/pc client安装:卸载/">安装/卸载</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/22/pc client安装:卸载/" class="archive-article-date">
+  	<time datetime="2017-07-22T14:11:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###背景<br>　　最近公司开发一款安装在Windows系统上的client，除了保证每个功能模块功能正常外，还需要考虑Windows系统上client的安装/卸载、兼容性、安全性这些点，下面就将这些测试点总结记录一下；</p>
+<p>###实施<br>下面将具体实施分为以下几点：</p>
+<ul>
+<li><p>安装/升级</p>
+<p>1，安装exe程序，查看安装软件文本是否合理、专业（一般都是调用第三方的，文本都一样）</p>
+<p>2，是否是强制升级，从低版本以及更低版本能否调用升级程序；</p>
+</li>
+<li><p>卸载</p>
+<p>1，一般安装完client会有卸载client的入口，用开始菜单中的卸载client卸载；</p>
+<p>2，在控制面板中卸载；</p>
+<p>3，在第三方安全软件中卸载；</p>
+<p>4，注意事项：卸载完查看安装目录，是否卸载干净；卸载完查看系统注册表，是否软件相关的注册信息卸载干净；</p>
+</li>
+<li><p>安全</p>
+<p>由于证书或者签名的问题，很多软件会被第三方安全软件标记为可疑程序，需要安装几款常用安全软件验证，360安全卫士、百度卫士、腾讯电脑管家</p>
+<p>1，下载的时候，exe程序可能会被浏览器标记为不安全；</p>
+<p>2，安装的时候，可能会被安全软件拒绝、阻止安装操作等；</p>
+<p>3，修改某些配置文件或写入系统文件时，会被安全软件拒绝或者阻止操作，这些都要注意；</p>
+</li>
+<li>兼容性<br>由于Windows系统版本较多，市面上使用的分布也不确定，所以兼容性也要注意一下<br>WindowsXP,Windows7,Windows8,Windows10  32位/64位</li>
+</ul>
+<p>　　</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/22/pc client安装:卸载/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-接口测试总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -392,6 +487,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>

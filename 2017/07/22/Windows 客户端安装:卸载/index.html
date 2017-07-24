@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>安装/卸载 | licui 的博客</title>
+  <title>Windows 客户端安装/卸载 | licui 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###背景 　　最近公司开发一款安装在Windows系统上的client，除了保证每个功能模块功能正常外，还需要考虑Windows系统上client的安装/卸载、兼容性、安全性这些点，下面就将这些测试点总结记录一下； 　　 ###实施 下面将具体实施分为以下几点：  安装/升级 1，安装exe程序，查看安装软件文本是否合理、专业（一般都是调用第三方的，文本都一样） 2，是否是强制升级，从低版本以及">
+  <meta name="description" content="背景　　最近公司开发一款安装在Windows系统上的client，除了保证每个功能模块功能正常外，还需要考虑Windows系统上client的安装/卸载、兼容性、安全性这些点，下面就将这些测试点总结记录一下； 　　 实施下面将具体实施分为以下几点：  安装/升级 1，安装exe程序，查看安装软件文本是否合理、专业（一般都是调用第三方的，文本都一样） 2，是否是强制升级，从低版本以及更低版本能否调用">
 <meta name="keywords" content="测试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安装&#x2F;卸载">
+<meta property="og:title" content="Windows 客户端安装&#x2F;卸载">
 <meta property="og:url" content="http://yoursite.com/2017/07/22/Windows 客户端安装:卸载/index.html">
 <meta property="og:site_name" content="licui 的博客">
-<meta property="og:description" content="###背景 　　最近公司开发一款安装在Windows系统上的client，除了保证每个功能模块功能正常外，还需要考虑Windows系统上client的安装/卸载、兼容性、安全性这些点，下面就将这些测试点总结记录一下； 　　 ###实施 下面将具体实施分为以下几点：  安装/升级 1，安装exe程序，查看安装软件文本是否合理、专业（一般都是调用第三方的，文本都一样） 2，是否是强制升级，从低版本以及">
-<meta property="og:updated_time" content="2017-07-24T04:38:07.000Z">
+<meta property="og:description" content="背景　　最近公司开发一款安装在Windows系统上的client，除了保证每个功能模块功能正常外，还需要考虑Windows系统上client的安装/卸载、兼容性、安全性这些点，下面就将这些测试点总结记录一下； 　　 实施下面将具体实施分为以下几点：  安装/升级 1，安装exe程序，查看安装软件文本是否合理、专业（一般都是调用第三方的，文本都一样） 2，是否是强制升级，从低版本以及更低版本能否调用">
+<meta property="og:updated_time" content="2017-07-24T05:28:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安装&#x2F;卸载">
-<meta name="twitter:description" content="###背景 　　最近公司开发一款安装在Windows系统上的client，除了保证每个功能模块功能正常外，还需要考虑Windows系统上client的安装/卸载、兼容性、安全性这些点，下面就将这些测试点总结记录一下； 　　 ###实施 下面将具体实施分为以下几点：  安装/升级 1，安装exe程序，查看安装软件文本是否合理、专业（一般都是调用第三方的，文本都一样） 2，是否是强制升级，从低版本以及">
+<meta name="twitter:title" content="Windows 客户端安装&#x2F;卸载">
+<meta name="twitter:description" content="背景　　最近公司开发一款安装在Windows系统上的client，除了保证每个功能模块功能正常外，还需要考虑Windows系统上client的安装/卸载、兼容性、安全性这些点，下面就将这些测试点总结记录一下； 　　 实施下面将具体实施分为以下几点：  安装/升级 1，安装exe程序，查看安装软件文本是否合理、专业（一般都是调用第三方的，文本都一样） 2，是否是强制升级，从低版本以及更低版本能否调用">
   
     <link rel="alternative" href="/atom.xml" title="licui 的博客" type="application/atom+xml">
   
@@ -165,7 +165,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      安装/卸载
+      Windows 客户端安装/卸载
     </h1>
   
 
@@ -178,11 +178,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###背景</p>
-<p>　　最近公司开发一款安装在Windows系统上的client，除了保证每个功能模块功能正常外，还需要考虑Windows系统上client的安装/卸载、兼容性、安全性这些点，下面就将这些测试点总结记录一下；
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>　　最近公司开发一款安装在Windows系统上的client，除了保证每个功能模块功能正常外，还需要考虑Windows系统上client的安装/卸载、兼容性、安全性这些点，下面就将这些测试点总结记录一下；
 　　</p>
-<p>###实施</p>
-<p>下面将具体实施分为以下几点：</p>
+<h3 id="实施"><a href="#实施" class="headerlink" title="实施"></a>实施</h3><p>下面将具体实施分为以下几点：</p>
 <ul>
 <li><p>安装/升级</p>
 <p>1，安装exe程序，查看安装软件文本是否合理、专业（一般都是调用第三方的，文本都一样）</p>
@@ -433,15 +431,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
               </li>
             
             <div class="clearfix"></div>

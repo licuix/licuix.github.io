@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Windows 客户端安装/卸载 | licui 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="背景　　最近公司开发一款安装在Windows系统上的client，除了保证每个功能模块功能正常外，还需要考虑Windows系统上client的安装/卸载、兼容性、安全性这些点，将这些测试点总结记录一下； 　　 实施 安装/升级 1，安装exe程序，查看安装软件文本是否合理、专业（一般都是调用现成的组件，文本都一样） 2，是否强制升级，从低版本以及更低版本能否调用升级程序；">
+  <meta name="description" content="背景　　最近公司开发一款安装在Windows系统上的client，除了保证每个功能模块功能正常外，还需要考虑Windows系统上client的安装/卸载、兼容性、安全性这些点，将这些测试点总结记录一下； 　　 实施 安装/升级 1，有的pc上运行的客户端是需要开发环境的支持的，比如我们的客户端是需要.net 和vc2013环境的支持的，像xp系统，这些环境是需要自己安装的，而Windows7及以上">
 <meta name="keywords" content="测试,随笔">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows 客户端安装&#x2F;卸载">
 <meta property="og:url" content="http://yoursite.com/2017/07/22/Windows 客户端安装:卸载/index.html">
 <meta property="og:site_name" content="licui 的博客">
-<meta property="og:description" content="背景　　最近公司开发一款安装在Windows系统上的client，除了保证每个功能模块功能正常外，还需要考虑Windows系统上client的安装/卸载、兼容性、安全性这些点，将这些测试点总结记录一下； 　　 实施 安装/升级 1，安装exe程序，查看安装软件文本是否合理、专业（一般都是调用现成的组件，文本都一样） 2，是否强制升级，从低版本以及更低版本能否调用升级程序；">
-<meta property="og:updated_time" content="2017-07-24T14:38:30.000Z">
+<meta property="og:description" content="背景　　最近公司开发一款安装在Windows系统上的client，除了保证每个功能模块功能正常外，还需要考虑Windows系统上client的安装/卸载、兼容性、安全性这些点，将这些测试点总结记录一下； 　　 实施 安装/升级 1，有的pc上运行的客户端是需要开发环境的支持的，比如我们的客户端是需要.net 和vc2013环境的支持的，像xp系统，这些环境是需要自己安装的，而Windows7及以上">
+<meta property="og:updated_time" content="2017-08-03T08:57:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows 客户端安装&#x2F;卸载">
-<meta name="twitter:description" content="背景　　最近公司开发一款安装在Windows系统上的client，除了保证每个功能模块功能正常外，还需要考虑Windows系统上client的安装/卸载、兼容性、安全性这些点，将这些测试点总结记录一下； 　　 实施 安装/升级 1，安装exe程序，查看安装软件文本是否合理、专业（一般都是调用现成的组件，文本都一样） 2，是否强制升级，从低版本以及更低版本能否调用升级程序；">
+<meta name="twitter:description" content="背景　　最近公司开发一款安装在Windows系统上的client，除了保证每个功能模块功能正常外，还需要考虑Windows系统上client的安装/卸载、兼容性、安全性这些点，将这些测试点总结记录一下； 　　 实施 安装/升级 1，有的pc上运行的客户端是需要开发环境的支持的，比如我们的客户端是需要.net 和vc2013环境的支持的，像xp系统，这些环境是需要自己安装的，而Windows7及以上">
   
     <link rel="alternative" href="/atom.xml" title="licui 的博客" type="application/atom+xml">
   
@@ -182,8 +182,9 @@
 　　</p>
 <h3 id="实施"><a href="#实施" class="headerlink" title="实施"></a>实施</h3><ul>
 <li><p>安装/升级</p>
-<p>1，安装exe程序，查看安装软件文本是否合理、专业（一般都是调用现成的组件，文本都一样）</p>
-<p>2，是否强制升级，从低版本以及更低版本能否调用升级程序；</p>
+<p>1，有的pc上运行的客户端是需要开发环境的支持的，比如我们的客户端是需要.net 和vc2013环境的支持的，像xp系统，这些环境是需要自己安装的，而Windows7及以上版本的系统，是自带这些开发环境的；</p>
+<p>2，安装exe程序，查看安装软件文本是否合理、专业（一般都是调用现成的组件，文本都一样）</p>
+<p>3，是否强制升级，从低版本以及更低版本能否调用升级程序；</p>
 <a id="more"></a>
 </li>
 </ul>
@@ -441,15 +442,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">测试</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
             
             <div class="clearfix"></div>

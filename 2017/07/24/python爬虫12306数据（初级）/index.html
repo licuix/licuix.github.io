@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/24/python爬虫12306数据（初级）/index.html">
 <meta property="og:site_name" content="licui 的博客">
 <meta property="og:description" content="简介 用Python爬取12306购票网站上的数据，并解析获取自己需要的数据，初级爬虫也就是完成这些功能，再高级的数据分析、数据处理方向我还需要继续努力… 实现步骤1，首先打开12306余票查询的界面    https://kyfw.12306.cn/otn/lcxxcx/init    等待插图 2，在浏览器中打开转包工具，输入出发地、目的地、出发日期查询，我们能够获取到整个查询过程中，网站请求">
-<meta property="og:updated_time" content="2017-08-15T01:31:01.000Z">
+<meta property="og:updated_time" content="2017-08-15T01:34:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 爬虫12306数据（初级）">
 <meta name="twitter:description" content="简介 用Python爬取12306购票网站上的数据，并解析获取自己需要的数据，初级爬虫也就是完成这些功能，再高级的数据分析、数据处理方向我还需要继续努力… 实现步骤1，首先打开12306余票查询的界面    https://kyfw.12306.cn/otn/lcxxcx/init    等待插图 2，在浏览器中打开转包工具，输入出发地、目的地、出发日期查询，我们能够获取到整个查询过程中，网站请求">
@@ -193,10 +193,40 @@
 <p><a href="https://kyfw.12306.cn/otn/resources/js/framework/station_name.js" target="_blank" rel="external">https://kyfw.12306.cn/otn/resources/js/framework/station_name.js</a></p>
 <p>我目前的思路是将城市编码的对应关系以dictionary的形式保存起来，每次调用的时候，遍历就可以啦，由于编码还属于菜鸟级别，所以编写的代码仅限于能用，至于性能、简洁性等就不要考虑啦…</p>
 <p>代码附上：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">def Station():</div><div class="line">    ssl._create_default_https_context = ssl._create_unverified_context</div><div class="line">    stationlist_url = &apos;https://kyfw.12306.cn/otn/resources/js/framework/station_name.js&apos;</div><div class="line">    req = request.Request(stationlist_url)</div><div class="line">    with request.urlopen(req) as f:</div><div class="line">        stationlist = f.read().decode()</div><div class="line">        stations=stationlist.split(&apos;@&apos;)</div><div class="line">        sta_dict=&#123;&#125;</div><div class="line">        for str_station in stations:</div><div class="line">            str_sta=str_station.split(&apos;|&apos;)</div><div class="line">            station_dict = &#123;&#125;</div><div class="line">            if len(str_sta)&gt;1:</div><div class="line">                station_dict[str_sta[1]]=str_sta[2]</div><div class="line">                sta_dict.update(station_dict)</div><div class="line">            else:</div><div class="line">                pass</div><div class="line">        return (sta_dict)</div></pre></td></tr></table></figure>
-<p>4，之后就是构造https请求需要传入的request的参数和headers数据了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">from_station_name=input(&apos;请输入您的出发地:&apos;)</div><div class="line">to_station_name=input(&apos;请输入您的目的地:&apos;)</div><div class="line">date=input(&apos;请输入您的出发时间:&apos;)</div><div class="line">Station_List=Station()</div><div class="line">for (name,code) in Station_List.items():</div><div class="line">    if name==from_station_name:</div><div class="line">        from_station=code</div><div class="line">    if name==to_station_name:</div><div class="line">        to_station=code</div><div class="line">url=getTrainUrl(date,from_station,to_station)</div><div class="line">req=request.Request(url)</div><div class="line">req.add_header(&apos;User-Agent&apos;,&apos;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36&apos;)</div><div class="line"> req.add_header(&apos;Cookie&apos;,&apos;__NRF=74C05F8DA4A54BAD8FE8C1858576401F; JSESSIONID=07C9A0B74083F3A180E8071886B47263; route=495c805987d0f5c8c84b14f60212447d; RAIL_EXPIRATION=1497577504826; RAIL_DEVICEID=n0Tv4aSltAPvIFcIdjtFwSIFrK1XaT60U6XSst8e3PkZVc8dFaq3JfvZRkB-rNdNsqNqxEL7wp56JqJbi3zUHKQ0g0QG2ULAu-AYPieOnWPNYDPJY9_pNQqYlp6df7FKSlQNRLB2IQkKxeKH9M-9bOSyEmRcirIA; RAIL_OkLJUJ=FDm1llvY3QyNEM5j6eXoCAA1pOBxbKtl; BIGipServeropn=1508901386.64545.0000; _jc_save_detail=true; current_captcha_type=Z; BIGipServerotn=686817802.50210.0000; BIGipServerpool_passport=267190794.50215.0000; _jc_save_fromStation=%u5317%u4EAC%2CBJP; _jc_save_toStation=%u6D4E%u5357%2CJNK; _jc_save_fromDate=2017-07-20; _jc_save_toDate=2017-07-20; _jc_save_wfdc_flag=dc&apos;)</div><div class="line">with request.urlopen(req) as f:</div><div class="line">       str_data=f.read().decode()</div></pre></td></tr></table></figure>
-<p>5，解析接口返回的数据，从中获取自己需要的数据</p>
+<pre><code>def Station():
+    ssl._create_default_https_context = ssl._create_unverified_context
+    stationlist_url = &apos;https://kyfw.12306.cn/otn/resources/js/framework/station_name.js&apos;
+    req = request.Request(stationlist_url)
+    with request.urlopen(req) as f:
+        stationlist = f.read().decode()
+        stations=stationlist.split(&apos;@&apos;)
+        sta_dict={}
+        for str_station in stations:
+            str_sta=str_station.split(&apos;|&apos;)
+            station_dict = {}
+            if len(str_sta)&gt;1:
+                station_dict[str_sta[1]]=str_sta[2]
+                sta_dict.update(station_dict)
+            else:
+                pass
+        return (sta_dict)
+</code></pre><p>4，之后就是构造https请求需要传入的request的参数和headers数据了</p>
+<pre><code>from_station_name=input(&apos;请输入您的出发地:&apos;)
+to_station_name=input(&apos;请输入您的目的地:&apos;)
+date=input(&apos;请输入您的出发时间:&apos;)
+Station_List=Station()
+for (name,code) in Station_List.items():
+    if name==from_station_name:
+        from_station=code
+    if name==to_station_name:
+        to_station=code
+url=getTrainUrl(date,from_station,to_station)
+req=request.Request(url)
+req.add_header(&apos;User-Agent&apos;,&apos;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36&apos;)
+ req.add_header(&apos;Cookie&apos;,&apos;__NRF=74C05F8DA4A54BAD8FE8C1858576401F; JSESSIONID=07C9A0B74083F3A180E8071886B47263; route=495c805987d0f5c8c84b14f60212447d; RAIL_EXPIRATION=1497577504826; RAIL_DEVICEID=n0Tv4aSltAPvIFcIdjtFwSIFrK1XaT60U6XSst8e3PkZVc8dFaq3JfvZRkB-rNdNsqNqxEL7wp56JqJbi3zUHKQ0g0QG2ULAu-AYPieOnWPNYDPJY9_pNQqYlp6df7FKSlQNRLB2IQkKxeKH9M-9bOSyEmRcirIA; RAIL_OkLJUJ=FDm1llvY3QyNEM5j6eXoCAA1pOBxbKtl; BIGipServeropn=1508901386.64545.0000; _jc_save_detail=true; current_captcha_type=Z; BIGipServerotn=686817802.50210.0000; BIGipServerpool_passport=267190794.50215.0000; _jc_save_fromStation=%u5317%u4EAC%2CBJP; _jc_save_toStation=%u6D4E%u5357%2CJNK; _jc_save_fromDate=2017-07-20; _jc_save_toDate=2017-07-20; _jc_save_wfdc_flag=dc&apos;)
+with request.urlopen(req) as f:
+       str_data=f.read().decode()
+</code></pre><p>5，解析接口返回的数据，从中获取自己需要的数据</p>
 <p>代码等待…</p>
 
       

@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>RobotFrameWork导入自定义库  | licui 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###背景&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;robotframework（后文简称“RF”）框架是一个成熟、稳定的第三方的自动化框架，我们在使用的过程中需要导入第三方库来完成接口测试的工作，但是有一些场景可能需要自己编写一些python库，导入到RF框架里，下文主要是介绍如何将自己编写的Python库导入到RF框架里； ###操作*Python代码结构1，.py文件  导入库的代码处">
+  <meta name="description" content="背景&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;robotframework（后文简称“RF”）框架是一个成熟、稳定的第三方的自动化框架，我们在使用的过程中需要导入第三方库来完成接口测试的工作，但是有一些场景可能需要自己编写一些python库，导入到RF框架里，下文主要是介绍如何将自己编写的Python库导入到RF框架里； 操作 Python代码结构1，.py文件  导入库的代码处理逻辑等2，">
 <meta name="keywords" content="-测试 -Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RobotFrameWork导入自定义库 ">
 <meta property="og:url" content="http://yoursite.com/2018/07/23/RobotFrameWork导入自定义库/index.html">
 <meta property="og:site_name" content="licui 的博客">
-<meta property="og:description" content="###背景&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;robotframework（后文简称“RF”）框架是一个成熟、稳定的第三方的自动化框架，我们在使用的过程中需要导入第三方库来完成接口测试的工作，但是有一些场景可能需要自己编写一些python库，导入到RF框架里，下文主要是介绍如何将自己编写的Python库导入到RF框架里； ###操作*Python代码结构1，.py文件  导入库的代码处">
-<meta property="og:updated_time" content="2018-07-23T10:18:40.000Z">
+<meta property="og:description" content="背景&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;robotframework（后文简称“RF”）框架是一个成熟、稳定的第三方的自动化框架，我们在使用的过程中需要导入第三方库来完成接口测试的工作，但是有一些场景可能需要自己编写一些python库，导入到RF框架里，下文主要是介绍如何将自己编写的Python库导入到RF框架里； 操作 Python代码结构1，.py文件  导入库的代码处理逻辑等2，">
+<meta property="og:updated_time" content="2018-07-23T10:20:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RobotFrameWork导入自定义库 ">
-<meta name="twitter:description" content="###背景&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;robotframework（后文简称“RF”）框架是一个成熟、稳定的第三方的自动化框架，我们在使用的过程中需要导入第三方库来完成接口测试的工作，但是有一些场景可能需要自己编写一些python库，导入到RF框架里，下文主要是介绍如何将自己编写的Python库导入到RF框架里； ###操作*Python代码结构1，.py文件  导入库的代码处">
+<meta name="twitter:description" content="背景&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;robotframework（后文简称“RF”）框架是一个成熟、稳定的第三方的自动化框架，我们在使用的过程中需要导入第三方库来完成接口测试的工作，但是有一些场景可能需要自己编写一些python库，导入到RF框架里，下文主要是介绍如何将自己编写的Python库导入到RF框架里； 操作 Python代码结构1，.py文件  导入库的代码处理逻辑等2，">
   
     <link rel="alternative" href="/atom.xml" title="licui 的博客" type="application/atom+xml">
   
@@ -178,8 +178,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###背景<br>&nbsp;&nbsp;&nbsp;&nbsp;robotframework（后文简称“RF”）框架是一个成熟、稳定的第三方的自动化框架，我们在使用的过程中需要导入第三方库来完成接口测试的工作，但是有一些场景可能需要自己编写一些python库，导入到RF框架里，下文主要是介绍如何将自己编写的Python库导入到RF框架里；</p>
-<p>###操作<br>*Python代码结构<br>1，.py文件  导入库的代码处理逻辑等<br>2，_init_文件  &nbsp;&nbsp;&nbsp;&nbsp;   初始化文件<br>3，setup.py文件   &nbsp;&nbsp;&nbsp;&nbsp;安装文件<br><a id="more"></a></p>
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;robotframework（后文简称“RF”）框架是一个成熟、稳定的第三方的自动化框架，我们在使用的过程中需要导入第三方库来完成接口测试的工作，但是有一些场景可能需要自己编写一些python库，导入到RF框架里，下文主要是介绍如何将自己编写的Python库导入到RF框架里；</p>
+<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><ul>
+<li>Python代码结构<br>1，.py文件  导入库的代码处理逻辑等<br>2，_init_文件  &nbsp;&nbsp;&nbsp;&nbsp;   初始化文件<br>3，setup.py文件   &nbsp;&nbsp;&nbsp;&nbsp;安装文件<a id="more"></a>
+</li>
+</ul>
 
       
 
@@ -410,6 +413,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-测试 -Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">测试</a>
               </li>
              
@@ -419,10 +426,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-测试 -Python</a>
               </li>
             
             <div class="clearfix"></div>
